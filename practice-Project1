@@ -1,0 +1,73 @@
+Setup and create git repository
+
+become a root user:
+# sudo su -
+Create a working directory[folder]
+# mkdir myproject
+Go inside the directory
+# cd myproject
+create empty files
+# touch file1.java file2.java
+Create a local repo
+# git init
+
+configuring
+
+git configurations:
+git config --global user.name sonal
+git config --global user.email sonal@gmail.com
+Configurations are of 3 types:
+================================
+Config Variables: user.name and user.email
+Local: The configuration when set with flag a local, the config variable will be application only to that particulr repository
+Global : The configuration when set with flag as global, the config variable will be application to every repository created by current user logged in the machine
+System : The configuration when set with flag as system, the config variable will be application to every repository created by every user logged in the machine
+Assignment:
+=====================
+Remove the configurations:
+==========================
+git config --global --unset user.name
+git config --global --unset user.email
+Find out the file/location where the git configuration are saved:
+================================
+local:
+global: cat ~/.gitconfig
+system: 
+========================================
+Adding a file to Local repo
+=====================================
+# git status
+# git add .
+OR
+# git add -a  // add all the files
+# git status
+# git commit -m "added file file1 and file2"
+
+
+==============================================
+Take an existing file which is tracked by GIT and do some modifications.
+Commit the changes to git
+====================================================
+Make changes in the file--> add some content in the file
+Edit the file
+# nano file1.java
+Insert any data
+To save and exit
+Press CTL x
+press y
+press enter key
+Now check git status:
+# git status
+======================================================
+To check the commit history on a git repository
+==================================================
+# git log
+# git log --oneline
+generate SSH keys:
+Go to lab terminal
+# cd
+# ssh-keygen
+dont enter any thing.. just keep pressing enter for 3 times
+You key will generated
+The public key can be seen by exeucting below commad:
+# cat /root/.ssh/id_rsa.pub
