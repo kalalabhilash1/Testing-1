@@ -1,0 +1,103 @@
+INHERITANCE
+
+In Java, inheritance is a fundamental concept in object-oriented programming (OOP) that allows one class (the subclass or derived class)
+to inherit attributes and behaviors from another class (the superclass or base class).
+There are several types of inheritance, including single inheritance, multiple inheritance (achieved through interfaces), and hierarchical inheritance.
+Let's explore these types with code examples:
+
+Single Inheritance:
+
+In single inheritance, a class inherits from only one superclass.
+// Superclass
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating.");
+    }
+}
+
+// Subclass inheriting from Animal
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();  // Inherited from Animal
+        dog.bark();
+    }
+}
+
+Multiple Inheritance (Through Interfaces):
+
+Java doesn't support multiple inheritance directly (i.e., a class inheriting from more than one class).
+However, it achieves a form of multiple inheritance through interfaces.
+
+// Interface 1
+interface Animal {
+    void eat();
+}
+
+// Interface 2
+interface Mammal {
+    void speak();
+}
+
+// Class implementing multiple interfaces
+class Dog implements Animal, Mammal {
+    @Override
+    public void eat() {
+        System.out.println("Dog is eating.");
+    }
+
+    @Override
+    public void speak() {
+        System.out.println("Dog is barking.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.speak();
+    }
+}
+
+Hierarchical Inheritance:
+
+In hierarchical inheritance, multiple subclasses inherit from a common superclass.
+
+// Superclass
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle is starting.");
+    }
+}
+
+// Subclasses inheriting from Vehicle
+class Car extends Vehicle {
+    void drive() {
+        System.out.println("Car is driving.");
+    }
+}
+
+class Motorcycle extends Vehicle {
+    void ride() {
+        System.out.println("Motorcycle is riding.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start();  // Inherited from Vehicle
+        car.drive();
+
+        Motorcycle motorcycle = new Motorcycle();
+        motorcycle.start();  // Inherited from Vehicle
+        motorcycle.ride();
+    }
+}
