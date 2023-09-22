@@ -1,0 +1,126 @@
+CLASSES
+
+In Java, a class is a fundamental building block of object-oriented programming (OOP). 
+It serves as a blueprint or template for creating objects, which are instances of that class.
+Here are key points about classes in Java:
+Definition: A class is defined using the class keyword followed by the class name. For example:
+public class MyClass {
+    // Class members and methods go here
+}
+
+public class Car {
+    // Attributes (fields)
+    private String make;
+    private String model;
+    private int year;
+    private double price;
+
+    // Constructor
+    public Car(String make, String model, int year, double price) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.price = price;
+    }
+
+    // Method to display car information
+    public void displayInfo() {
+        System.out.println("Make: " + make);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Price: $" + price);
+    }
+
+    public static void main(String[] args) {
+        // Creating objects of the Car class
+        Car car1 = new Car("Toyota", "Camry", 2022, 25000.0);
+        Car car2 = new Car("Honda", "Civic", 2021, 22000.0);
+
+        // Accessing object attributes and methods
+        System.out.println("Car 1 Information:");
+        car1.displayInfo();
+
+        System.out.println("\nCar 2 Information:");
+        car2.displayInfo();
+    }
+}
+
+OBJECTS
+
+In Java, an object is a fundamental concept of object-oriented programming (OOP).
+Objects are instances of classes, and they represent real-world entities, concepts, or instances with both data (attributes) and behavior (methods). 
+Here are key points about objects in Java:
+Object Creation: To create an object, you use the new keyword followed by the class constructor. The constructor initializes the object and can accept parameters for setting its initial state.
+Person person1 = new Person("Alice", 30);
+
+public class Person {
+    // Attributes (fields)
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display person information
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating objects of the Person class
+        Person person1 = new Person("Alice", 30);
+        Person person2 = new Person("Bob", 25);
+
+        // Accessing object attributes and methods
+        System.out.println("Person 1 Information:");
+        person1.displayInfo();
+
+        System.out.println("\nPerson 2 Information:");
+        person2.displayInfo();
+    }
+}
+
+CONSTRUCTORS
+In Java, constructors are special methods within a class used to initialize objects.
+Constructors have the same name as the class and are called when an object of that class is created using the new keyword.
+Constructors initialize the object's attributes and perform any necessary setup operations. Here are key points about constructors in Java:
+
+public class Person {
+    private String name;
+    private int age;
+
+    // Default constructor
+    public Person() {
+        name = "Unknown";
+        age = 0;
+    }
+
+    // Parameterized constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display person information
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        // Creating objects using constructors
+        Person person1 = new Person(); // Default constructor
+        Person person2 = new Person("Alice", 30); // Parameterized constructor
+
+        // Accessing object attributes and methods
+        System.out.println("Person 1 Information:");
+        person1.displayInfo();
+
+        System.out.println("\nPerson 2 Information:");
+        person2.displayInfo();
+    }
+}
