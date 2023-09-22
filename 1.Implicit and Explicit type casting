@@ -1,58 +1,34 @@
 IMPLICIT TYPE CASTING
 
-package javaPrograms;
+package javaprograms;
 
 public class ImplicitTypeCasting {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		// implicit typecasting demo
-		
-		// int size is just 4 bytes, double size is 8 bytes
-		
-		int a=10;
-		
-		 // double b;
-		
-		// Convert a which is an integer into double
-		
-		double b = a ; // value of int a is now has datatype double
-		
+		int a =10;
+		double b;
+		b = a;
 		System.out.println(b);
-		
-		
-		
+
 	}
 
 }
+
 
 EXPLICT TYPE CASTING
 
-package javaPrograms;
+package javaprograms;
 
-public class ExplicitTypecasting {
-	
+public class ExplicitTypeCasting {
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		// Explicit typecasting demo
-		
-		// int size is just 4 bytes, double size is 8 bytes
-		
-		double a=11.4;
-		
-		
-		 // int b;
-		
-		// Convert a variable which is a double into integer
-		
-		int b = (int)a ; // value of double a is now has datatype int
-		
+		double a = 11.34;
+		int b = (int)a;
 		System.out.println(b);
-		
-		
-		
+
 	}
 
 }
+
