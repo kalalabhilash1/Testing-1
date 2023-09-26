@@ -1,0 +1,94 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseRecordHandling {
+    public static void main(String[] args) {
+        // Database connection parameters
+        String jdbcUrl = "jdbc:mysql://localhost:3306/mydb"; // Change to your database URL
+        String user = "yourusername"; // Change to your database username
+        String password = "yourpassword"; // Change to your database password
+
+        try {
+            // 1. Register the JDBC driver (optional for newer JDBC drivers)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // 2. Create a connection to the database
+            Connection connection = DriverManager.getConnection(jdbcUrl, user, password);
+
+            // 3. Insert a new record
+            insertRecord(connection, "John", "Doe", 50000.0);
+
+            // 4. Update an existing record
+            updateRecord(connection, 1, 55000.0);
+
+            // 5. Retrieve and display records
+            retrieveRecords(connection);
+
+            // 6. Close the Connection
+            connection.close();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void insertRecord(Connection connection, String firstName, String lastName, double salary) throws SQLException {
+        String insertSql = "INSERT INTO employees (first_name, last_name, salary) VALUES (?, ?, ?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
+
+        preparedStatement.setString(1, firstName);
+        preparedStatement.setString(2, lastName);
+        preparedStatement.setDouble(3, salary);
+
+        int rowsInserted = preparedStatement.executeUpdate();
+        if (rowsInserted > 0) {
+            System.out.println("Record inserted successfully.");
+        }
+
+        preparedStatement.close();
+    }
+
+    private static void updateRecord(Connection connection, int employeeId, double newSalary) throws SQLException {
+        String updateSql = "UPDATE employees SET salary = ? WHERE employee_id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(updateSql);
+
+        preparedStatement.setDouble(1, newSalary);
+        preparedStatement.setInt(2, employeeId);
+
+        int rowsUpdated = preparedStatement.executeUpdate();
+        if (rowsUpdated > 0) {
+            System.out.println("Record updated successfully.");
+        } else {
+            System.out.println("Record not found.");
+        }
+
+        preparedStatement.close();
+    }
+
+    private static void retrieveRecords(Connection connection) throws SQLException {
+        String selectSql = "SELECT * FROM employees";
+        Statement statement = connection.createStatement();
+
+        ResultSet resultSet = statement.executeQuery(selectSql);
+        while (resultSet.next()) {
+            int empId = resultSet.getInt("employee_id");
+            String firstName = resultSet.getString("first_name");
+            String lastName = resultSet.getString("last_name");
+            double salary = resultSet.getDouble("salary");
+
+            // Display the retrieved data
+            System.out.println("Employee ID: " + empId);
+            System.out.println("Name: " + firstName + " " + lastName);
+            System.out.println("Salary: " + salary);
+            System.out.println();
+        }
+
+        resultSet.close();
+        statement.close();
+    }
+}
