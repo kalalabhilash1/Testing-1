@@ -1,0 +1,91 @@
+SCREENSHOTS
+
+
+package seleniumScripts;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ScreenshotDemo1 {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+		// TODO Auto-generated method stub
+		
+		 WebDriver driver = new ChromeDriver();
+			
+			driver.manage().window().maximize();
+			
+			driver.get("https://opera.com/download");
+			
+			Thread.sleep(1000);
+			
+			// take screenshot of current window and store it in a file object
+			
+			File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+   
+			File destFile = new File("./Screenshots/opera.png");
+
+			FileUtils.copyFile(srcFile, destFile);
+					
+	}
+
+}
+
+
+BROWSER PROFILES
+
+To change browser profiles in Selenium, you can use the following steps:
+
+Create a new ChromeOptions or FirefoxProfile object. This object will allow you to set the profile for the browser.
+Set the profile path. You can do this by using the addArguments() method on the ChromeOptions or FirefoxProfile object.
+Create a new WebDriver object. Pass the ChromeOptions or FirefoxProfile object to theconstructor of the WebDriver object.
+Use the WebDriver object to interact with the browser.
+Here is an example of how to change the browser profile in Selenium using Java:
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.options.ChromeOptions;
+
+public class SeleniumTest {
+
+    public static void main(String[] args) {
+        // Create a new ChromeOptions object
+        ChromeOptions options = new ChromeOptions();
+
+        // Set the profile path
+        options.addArguments("--user-data-dir=/path/to/profile");
+
+        // Create a new WebDriver object
+        WebDriver driver = new ChromeDriver(options);
+
+        // Navigate to the Google homepage
+        driver.get("https://www.google.com");
+
+        // Find the search bar element
+        By searchBarLocator = By.name("q");
+        WebElement searchBar = driver.findElement(searchBarLocator);
+
+        // Enter the search term "Selenium"
+        searchBar.sendKeys("Selenium");
+
+        // Click the search button
+        By searchButtonLocator = By.name("btnK");
+        WebElement searchButton = driver.findElement(searchButtonLocator);
+        searchButton.click();
+
+        // Close the browser
+        driver.quit();
+    }
+}
+
+
+
+
