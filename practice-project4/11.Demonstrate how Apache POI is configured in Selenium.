@@ -1,0 +1,87 @@
+To configure Apache POI (Poor Obfuscation Implementation) for working with Excel files in a Selenium project, follow these steps:
+
+Add Apache POI Dependencies:
+
+You need to add the Apache POI libraries to your Selenium project. You can download the Apache POI JAR files from the Apache POI website (https://poi.apache.org/download.html) or use a build tool like Maven to manage your dependencies. If you're using Maven, add the following dependencies to your pom.xml:
+
+APACHE POI DEPENDENCIES
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ATE-Phase2-Selenium-TestNG</groupId>
+  <artifactId>ATE-Phase2-Selenium-TestNG</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+  
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.12.1</version>
+</dependency>
+
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.4.1</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.7.1</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.0.9</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>4.1.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>4.1.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml-schemas</artifactId>
+    <version>4.1.1</version>
+</dependency>
+
+
+</dependencies>
+</project>
+
+
+ To configure Apache POI (Poor Obfuscation Implementation) for working with Excel files in a Selenium project, follow these steps:
+
+Add Apache POI Dependencies:
+You need to add the Apache POI libraries to your Selenium project. You can download the Apache POI JAR files from the Apache POI website (https://poi.apache.org/download.html) or use a build tool like Maven to manage your dependencies. If you're using Maven, add the following dependencies to your pom.xml:
+
+ Import Apache POI Classes:
+In your Selenium test script, import the necessary Apache POI classes. For example:
+
+ Open and Read Excel Files:
+Use Apache POI to open and read Excel files in your Selenium tests. Here's an example of how to open an Excel file and access its data:
+
+Write Data to Excel Files:
+You can also use Apache POI to write data to Excel files. Here's an example of how to create a new Excel file and write data to it:
+
+Close Resources:
+It's important to close the resources (file streams) when you're done working with Excel files to prevent memory leaks.
+
+Run Your Selenium Tests:
+Incorporate the Apache POI code into your Selenium test scripts as needed to read or write data from/to Excel files.
+
+By following these steps, you can configure and use Apache POI in your Selenium project to interact with Excel files for test data management or reporting.
