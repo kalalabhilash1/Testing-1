@@ -1,0 +1,115 @@
+TEST POPULATION SEARCH
+
+
+package com.app.TDD.demo;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TestPopulationSearch {
+	
+	// give a city name as test data , the code should return  the population in the city
+	
+	@Test
+	public void findpopulation()
+	{
+		
+		String city = "Mumbai";
+		int ExpectedPopulation = 2000000;
+		PopulationSearch ps = new PopulationSearch();
+		
+		// number of people in the city
+		
+		int count = ps.getPopulation(city);
+		
+		System.out.println(count);
+		
+		Assert.assertEquals(count, ExpectedPopulation);
+		
+	}
+	
+	@Test
+	public void findpopulationEmptyInput()
+	{
+		try {
+		String city = "";
+		int ExpectedPopulation = 0;
+		PopulationSearch ps = new PopulationSearch();
+		
+		// number of people in the city
+		
+		int count = ps.getPopulation(city);
+		}
+		
+		catch(NullPointerException e)
+		{
+			System.out.println("City name cannot be empty");
+		}
+		
+		
+		
+	}
+	
+	@Test
+	public void findpopulationInvalidInput()
+	{
+		try {
+		String city = "Hyderabad";
+		int ExpectedPopulation = 700000;
+		PopulationSearch ps = new PopulationSearch();
+		
+		// number of people in the city
+		
+		int count = ps.getPopulation(city);
+		}
+		
+		
+		catch(NullPointerException e1)
+		{
+			System.out.println("City name doesnot exisit in the list");
+		}
+		
+		
+	}
+
+
+ TEST USERNAME
+
+ package com.app.TDD.demo;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TestUsernamefeature {
+	
+	// we want to develop a username field which will take valid input from user
+	
+	@Test
+	public void UsernameTest()
+	{
+		UsernameCode obj = new UsernameCode();
+		
+		String username = "adminuser";
+		String username1 = "admin/user"; // a username should not have /
+		String username2 = "admin#user"; // a username should not have #
+		String username3 = "admin123";
+		
+		Assert.assertTrue(obj.isvalidUsername(username));
+		Assert.assertFalse(obj.isvalidUsername(username1),"This is not valid user");
+		Assert.assertFalse(obj.isvalidUsername(username2),"This is not valid user");
+		Assert.assertTrue(obj.isvalidUsername(username3));
+		
+		
+	}
+
+}
+
+	
+	
+	
+	
+	
+	
+
+}
+
