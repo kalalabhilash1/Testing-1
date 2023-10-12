@@ -1,0 +1,13 @@
+SELENIUM GRID USING TOML FILE:HUB config
+
+[server]
+port = 4449
+
+[sessionqueue]
+session-request-timeout = 500
+
+NODE config
+
+[node]
+drivers = ["chrome"]
+max-sessions = 3
