@@ -1,0 +1,47 @@
+ To integrate Selenium with Maven, follow these steps:
+
+Create a Maven Project:
+
+If you haven't already, create a new Maven project in your preferred Integrated Development Environment (IDE) or by using the command line. You can use a Maven archetype to set up a basic project structure.
+ Add Selenium Dependencies:
+
+   <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.12.1</version>
+</dependency>
+
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.4.1</version>
+</dependency>
+
+Open the pom.xml file in your Maven project, and add Selenium dependencies. You'll need at least the Selenium WebDriver dependency, but you may also want to include dependencies for Selenium Grid, browsers, etc. Here's an example with the WebDriver dependency:
+ Update Maven Project:
+
+After adding the dependencies, update your Maven project to fetch the necessary libraries. You can do this from your IDE or use the following command:
+ Create Selenium Test Classes:
+
+Create your Selenium test classes. You can use a framework like TestNG or JUnit to structure your test classes. For example, create a test class that contains your Selenium test methods.
+
+Add WebDriver Setup:
+
+In your test classes, set up the WebDriver. Initialize the WebDriver in a @BeforeTest or @BeforeClass method, and make sure to close it in an @AfterTest or @AfterClass method to release resources.
+
+Write Selenium Tests:
+
+Write your Selenium test cases using the WebDriver to interact with web pages, locate elements, perform actions, and
+ Run Selenium Tests:
+
+You can run your Selenium tests from the command line using Maven, or you can run them directly from your IDE. To run tests using Maven, use a command like this:
+ Generate Reports (Optional):
+
+You can use Maven plugins, such as the Surefire or Failsafe plugins, to generate test reports and integrate with CI/CD pipelines. Configure these plugins in the pom.xml file as needed.
+
+Keep Test Data and Resources Separate (Best Practice):
+
+It's a good practice to keep test data and resources separate from your code. You can use properties files, configuration files, or external data sources to manage test data.
+
+By following these steps, you can integrate Selenium with Maven and manage your Selenium test automation projects effectively using Maven's build and dependency management
