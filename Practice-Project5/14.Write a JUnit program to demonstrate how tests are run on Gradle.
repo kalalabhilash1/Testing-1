@@ -1,0 +1,61 @@
+To demonstrate how tests are run on Gradle, you can create a simple JUnit test case and configure Gradle to run the tests. Here's an example:
+
+1. Create a new directory for your project and navigate to it in the console.
+
+2. Create a new file called `build.gradle` and add the following configuration:
+
+groovy
+plugins {
+    id 'java'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
+
+test {
+    useJUnit()
+}
+
+
+3. Create a new directory called `src/test/java` and navigate to it.
+
+4. Create a new Java file called `MyTestClass.java` and add the following code:
+
+java
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class MyTestClass {
+    @Test
+    public void testAddition() {
+        int result = 2 + 2;
+        assertEquals(4, result);
+    }
+}
+
+
+5. Save the file and navigate back to the project's root directory.
+
+6. In the console, run the following command to execute the tests using Gradle:
+
+
+gradle test
+
+
+Gradle will compile the code, run the tests, and display the test results in the console.
+
+You should see an output similar to the following:
+
+
+> Task :test
+
+MyTestClass > testAddition PASSED
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+
