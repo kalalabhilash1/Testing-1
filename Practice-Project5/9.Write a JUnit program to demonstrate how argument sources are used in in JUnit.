@@ -1,0 +1,92 @@
+ PARAMETERISED METHODSOURCE
+
+
+package com.app.junitDemo;
+
+import java.util.stream.Stream;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+
+public class ParametrizedTestMethodSource {
+	
+	
+	// argument = each value stored in method or enum class or value source
+	
+	@ParameterizedTest(name = "Method value {arguments}") // this will execute the method
+	@MethodSource("stringParameters") // this will give the input
+	public void getdatafromMethod(String input)
+	{
+		System.out.println("The value from method is: " + input);
+	}
+	
+	
+	// This method will pass a range of values
+	
+	public static Stream<String> stringParameters()
+	{
+		
+		return Stream.of("Monday","tuesday","Wednesday");
+	}
+	
+	
+
+}
+
+ENUMSOURCE
+package com.app.junitDemo;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
+
+public class ParametrizedDemoEnumSource {
+	
+	// If the code is returning a value which is stored in Enum class then we use Enum source
+	// It is a class, that represents group of constants
+	// final variable : values dont change
+	// access the item in an iteratable way
+	
+	enum Values{
+		Selenium, Jmeter, Junit   // values of type Enum
+	}
+	
+	@ParameterizedTest(name = "Enum Value {arguments}")
+	@EnumSource(Values.class)
+	public void passvaluesEnumSource(Object value)
+	{
+		// Returns a string representation of the object
+		System.out.println(value.toString());
+	}
+
+}
+
+
+CSV source
+
+
+package com.app.junitDemo;
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+public class ParameterizedDemoCSVsource {
+	
+	// CSV => storing data in form of row and colums-> like an excel
+	
+	
+	@ParameterizedTest(name = "CSV source {arguments}")
+	@CsvSource({
+			"Audi ,  25",  // row and column
+			"BMW ,   24",
+			"Volvo , 45",
+			"Merc ,  50"		
+	})
+	
+	public void datafrom_CSVsource(String car, String quantity)
+	{
+		System.out.println(car+" : "+quantity);
+	}
+
+}
+
+
