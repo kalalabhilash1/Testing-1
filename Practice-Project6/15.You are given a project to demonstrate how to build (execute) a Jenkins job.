@@ -1,0 +1,8 @@
+To build (execute) a Jenkins job, follow these steps:
+
+1. Log in to your Jenkins instance.
+2. Navigate to the dashboard and locate the job you want to build.
+3. Click on the job name to open the job configuration page.
+4. On the left-hand side, click on the "Build Now" or "Build" button to start the job.
+5. Jenkins will start executing the job, and you can monitor the progress on the job's page.
+6. Once the job completes, you can view the build result, console output, and any generated artifacts.
