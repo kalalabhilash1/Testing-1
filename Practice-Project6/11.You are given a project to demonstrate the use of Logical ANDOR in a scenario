@@ -1,0 +1,21 @@
+
+Scenario: Login with valid credentials
+  Given I am on the login page
+  When I enter a valid username
+  And I enter a valid password
+  And I click on the "Login" button
+  Then I should be logged in successfully
+
+Scenario: Login with invalid credentials
+  Given I am on the login page
+  When I enter an invalid username
+  Or I enter an invalid password
+  And I click on the "Login" button
+  Then I should see an error message
+
+
+In the first scenario, we use the logical AND (`And`) to specify multiple steps that need to be performed in sequence. Each step is dependent on the previous step.
+
+In the second scenario, we use the logical OR (`Or`) to specify alternative steps. Either entering an invalid username or entering an invalid password will trigger the same outcome.
+
+By using logical AND and OR, you can create scenarios that accurately represent different conditions and actions in your test cases.
