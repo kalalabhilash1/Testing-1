@@ -1,0 +1,12 @@
+the functions of some common Gherkin keywords:
+
+1. Feature: Describes a high-level business requirement or feature.
+2. Scenario: Represents a specific test case or scenario.
+3. Given: Specifies the initial context or preconditions for the scenario.
+4. When: Describes the action or event that occurs.
+5. Then: Defines the expected outcome or result of the scenario.
+6. And: Used to add additional steps to a scenario.
+7. But: Used to provide an alternative or exception to a previous step.
+8. Background: Defines steps that are common to all scenarios in a feature.
+9. Scenario Outline: Allows for parameterization of scenarios using examples.
+10. Examples: Provides a table of example values for a Scenario Outline.
