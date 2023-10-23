@@ -1,0 +1,18 @@
+ step-by-step explanation of setting up Cucumber with Maven, Extent Reports, and the Cucumber Eclipse Plugin:
+
+1. Maven Setup:
+   - Open your project's pom.xml file.
+   - Add the Cucumber dependencies under the `<dependencies>` section.
+   - You can find the necessary dependencies on the Cucumber website or in the Cucumber documentation.
+
+2. Extent Reports Setup:
+   - Open your project's pom.xml file.
+   - Add the Extent Reports dependency under the `<dependencies>` section.
+   - You can find the necessary dependency on the Extent Reports website or in the Extent Reports documentation.
+
+3. Cucumber Eclipse Plugin Setup:
+   - Open Eclipse.
+   - Go to "Help" -> "Eclipse Marketplace".
+   - Search for "Cucumber Eclipse Plugin".
+   - Click "Go" and install the plugin.
+   - Restart Eclipse to apply the changes.
