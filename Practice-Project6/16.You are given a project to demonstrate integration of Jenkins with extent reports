@@ -1,0 +1,14 @@
+To integrate Jenkins with Extent Reports, you can follow these steps:
+
+1. Install the Extent Reports plugin in your Jenkins instance.
+You can do this by navigating to "Manage Jenkins" > "Manage Plugins" and searching for "Extent Reports" in the available plugins section.
+Install and restart Jenkins if required.
+
+2. Configure your Jenkins job to generate Extent Reports. 
+In your Jenkins job configuration, add a post-build action to "Publish Extent Reports".
+Specify the path to your Extent Reports HTML file or directory containing the reports.
+
+3. Build your Jenkins job. Once the job is executed, the Extent Reports plugin will parse the reports and display them in the Jenkins job's build page.
+
+4. Access the Extent Reports in Jenkins.
+After the job is built, you can navigate to the job's build page and click on the "Extent Reports" link to view the generated reports.
