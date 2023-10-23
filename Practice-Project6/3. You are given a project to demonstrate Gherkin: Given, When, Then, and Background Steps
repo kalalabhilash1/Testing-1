@@ -1,0 +1,28 @@
+example of a feature file with Gherkin keywords, including the use of Background steps:
+Feature: Shopping Cart Functionality
+
+  Background:
+    Given I am a logged-in user
+    And I have added items to my shopping cart
+
+  Scenario: Adding Items to Cart
+    Given I am on the product page
+    When I click on the "Add to Cart" button for a product
+    Then the item should be added to my shopping cart
+
+  Scenario: Removing Items from Cart
+    Given I am on the shopping cart page
+    When I click on the "Remove" button for an item
+    Then the item should be removed from my shopping cart
+
+  Scenario: Updating Quantity in Cart
+    Given I am on the shopping cart page
+    When I update the quantity of an item
+    Then the quantity should be updated in my shopping cart
+
+  Scenario: Checking Out
+    Given I am on the checkout page
+    When I enter my shipping and payment information
+    And I click on the "Place Order" button
+    Then my order should be successfully placed
+
