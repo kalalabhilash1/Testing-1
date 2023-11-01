@@ -1,0 +1,17 @@
+Import the required libraries.
+Create a JavaSampler class that extends the Selenium WebDriver class.
+Create a JMeter test plan and add a SeleniumSampler to it.
+
+Add a Thread Group to your test plan.
+
+Right-click on the Thread Group and select Add > Sampler > Java Sampler.
+
+In the Java Sampler properties dialog box, enter the following information:
+
+Class name: SeleniumSampler
+Arguments: Any arguments that you want to pass to the SeleniumSampler class, such as the URL of the web page to open and the ID of the button to click.
+Click OK to add the SeleniumSampler to the test plan.
+
+Add any other controllers that you want to use to control the SeleniumSampler, such as a Loop Controller or a Switch Controller.
+
+Run the test plan.
