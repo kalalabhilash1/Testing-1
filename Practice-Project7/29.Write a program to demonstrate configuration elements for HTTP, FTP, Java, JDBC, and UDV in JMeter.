@@ -1,0 +1,27 @@
+Configuration Elements in JMeter
+
+HTTP
+
+HTTP Request Defaults: This configuration element allows you to set default values for all HTTP Request samplers in your test plan, such as the server name, port, and protocol.
+HTTP Authorization Manager: This configuration element allows you to manage HTTP authorization credentials for your test plan.
+HTTP Cache Manager: Thisconfiguration element allows you to control how JMeter caches HTTP responses.
+HTTP Cookie Manager: This configuration element allows you to manage cookies for your test plan.
+HTTP Header Manager: This configuration element allows you to set HTTP headers for your test plan.
+FTP
+
+FTP Request Defaults: This configuration element allows you to set default values for all FTP Request samplers in your test plan, such as the server name, port, and username.
+FTP File Server: This configuration element allows you to configure an FTP server for use in your test plan.
+JAVA
+
+Java Request Defaults: This configuration element allows you to set default values for all Java Request samplers in your test plan, such as the classpath and the class to execute.
+Java Sampler: This configuration element allows you to execute Java code in your test plan.
+JDBC
+
+JDBC Connection Configuration: This configuration element allows you to configure a JDBC connection for use in your test plan.
+JDBC Request: This configuration element allows you to execute a JDBC query in your test plan.
+UDV
+
+User Defined Variables: This configuration element allows you to define user-defined variables for use in your test plan.
+CSV Data Set Config: This configuration element allows you to read data from a CSV file and use it in your test plan.
+Random Variable: This configuration element allows you to generate random values for use in your test plan.
+Counter: This configuration element allows you to track the number of times that a certain part of your test plan has executed.
