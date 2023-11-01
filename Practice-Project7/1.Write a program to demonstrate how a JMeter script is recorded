@@ -1,1 +1,53 @@
+STEPS TO RECORD A SCRIPT IN JMETER
 
+
+To record a JMeter script, you can use the JMeter HTTP(S) Test Script Recorder. To do this, follow these steps:
+
+1.Open JMeter.
+2.Right-click on the Test Plan node and select Add > Non-Test Element > HTTP(S) Test Script Recorder.
+3.Configure the HTTP(S) Test Script Recorder:
+4.Enter the port number that you want to use for recording.
+5.Select the protocol that you want to record (HTTP or HTTPS).
+6.Select the target controller that you want to record to.
+7.Click the Start button to start recording.
+8.Perform the actions that you want to record in your browser.
+9.Click the Stop button to stop recording.
+11.JMeter will save a JMeter script file (.jmx) that contains the recorded requests. You can then open this file in JMeter and play it back to simulate your workload.
+
+Here is an example of a simple JMeter script that records a request to the Google home page:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2">
+<hashTree>
+<TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Google Home Page" enabled="true">
+<stringProp name="TestPlan.comments"></stringProp>
+<boolProp name="TestPlan.functional_mode">false</boolProp>
+<boolProp name="TestPlan.tearDown">true</boolProp>
+<hashTree>
+<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group 1" enabled="true">
+<stringProp name="ThreadGroup.num_threads">1</stringProp>
+<stringProp name="ThreadGroup.ramp_time">1</stringProp>
+<longProp name="ThreadGroup.duration">30</longProp>
+<longProp name="ThreadGroup.loops">1</longProp>
+<hashTree>
+<HTTPSampler guiclass="HttpTestSampleGui" testclass="HTTPSampler" testname="Google Home Page" enabled="true">
+<stringProp name="HTTPSampler.domain">www.google.com</stringProp>
+<stringProp name="HTTPSampler.port">443</stringProp>
+<stringProp name="HTTPSampler.protocol">HTTPS</stringProp>
+<stringProp name="HTTPSampler.path"></stringProp>
+<stringProp name="HTTPSampler.method">GET</stringProp>
+<stringProp name="HTTPSampler.contentEncoding"></stringProp>
+<boolProp name="HTTPSampler.followRedirects">true</boolProp>
+<boolProp name="HTTPSampler.autoRedirects">true</boolProp>
+<boolProp name="HTTPSampler.useKeepAlive">true</boolProp>
+<boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+<boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART_POST">false</boolProp>
+<boolProp name="HTTPSampler.monitor">false</boolProp>
+<stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSampler>
+</hashTree>
+</ThreadGroup>
+</hashTree>
+</TestPlan>
+</hashTree>
+</jmeterTestPlan>
