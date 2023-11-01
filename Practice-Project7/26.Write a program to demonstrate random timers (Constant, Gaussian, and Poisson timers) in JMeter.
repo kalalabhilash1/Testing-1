@@ -1,0 +1,19 @@
+To demonstrate random timers in JMeter, you can use the following steps:
+
+Constant Timer:
+
+Add a Constant Timer to the sampler that you want to add the timer to.
+Configure the Constant Timer by entering the delay in milliseconds.
+Run the test.
+Gaussian Timer:
+
+Add a Gaussian Timer to the sampler that you want to add the timer to.
+Configure the Gaussian Timer by entering the mean and standard deviation in milliseconds.
+Run the test.
+Poison Timer:
+
+Add a Poison Timer to the sampler that you want to add the timer to.
+Configure the Poison Timer by entering the rate in milliseconds.
+Run the test.
+
+
