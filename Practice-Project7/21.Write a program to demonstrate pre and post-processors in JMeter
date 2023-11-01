@@ -1,0 +1,16 @@
+Pre-processors in JMeter
+Pre-processors in JMeter are executed before the sampler is executed. They can be used to modify the sampler request or to prepare the environment for the sampler.
+
+Some examples of pre-processors include:
+
+HTTP Cookie Manager: This pre-processor allows you to manage cookies for your HTTP sampler requests.
+CSV Data Set Reader: This pre-processor allows you to read data from a CSV file and use the data to populate variables that can be used in your sampler requests.
+Regular Expression Extractor: This pre-processor allows you to extract values from a sampler response using regular expressions. The extracted values can be stored in variables that can be used in subsequent samplers.
+Post-processors in JMeter
+Post-processors in JMeter are executed after the sampler is executed. They can be used to process the sampler response or to store the results.
+
+Some examples of post-processors include:
+
+Assertion: This post-processor allows you to assert that the sampler response meets certain criteria.
+BeanShell Sampler: This post-processor allows you to execute custom Java code on the sampler response.
+JDBC Post Processor: This post-processor allows you to store the sampler results in a JDBC database.
