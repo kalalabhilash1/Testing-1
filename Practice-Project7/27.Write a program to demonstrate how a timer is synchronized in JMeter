@@ -1,0 +1,9 @@
+A Synchronizing Timer in JMeter can be used to synchronize the execution of threads. This can be useful for ensuring that all threads begin executing at the same time, or for ensuring that a certain number of threads have started executing before others.
+
+To use a Synchronizing Timer in JMeter, follow these steps:
+
+Add a Synchronizing Timer to the test element that you want to synchronize.
+Configure the Synchronizing Timer by entering the following:
+Number of Simulated Users to Group By: This is the number of threads that need to start executing before the Synchronizing Timer will release the remaining threads.
+Timeout: This is the maximum amount of time that the Synchronizing Timer will wait for all threads to start executing. If the timeout is reached and not all threads have started executing, the remaining threads will be released.
+Run the test.
