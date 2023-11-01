@@ -4,7 +4,7 @@ STEPS TO RECORD A SCRIPT IN JMETER
 To record a JMeter script, you can use the JMeter HTTP(S) Test Script Recorder. To do this, follow these steps:
 
 1.Open JMeter.
-2.Right-click on the Test Plan node and select Add > Non-Test Element > HTTP(S) Test Script Recorder.
+2.Right-click on the Test Plan node and select Add > Non-Test Element > HTTP(S) Test Script Recorder
 3.Configure the HTTP(S) Test Script Recorder:
 4.Enter the port number that you want to use for recording.
 5.Select the protocol that you want to record (HTTP or HTTPS).
