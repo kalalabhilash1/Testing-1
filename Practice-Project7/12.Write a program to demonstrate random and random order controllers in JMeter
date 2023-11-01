@@ -1,0 +1,7 @@
+To demonstrate the Random and Random Order Controllers in JMeter, you can use the following steps:
+
+Create a JMeter Test Plan and add a Thread Group.
+Under the Thread Group node, add a Random Controller and a Random Order Controller.
+Under the Random Controller node, add a few HTTP Samplers.
+Under the Random Order Controller node, add a few HTTP Samplers.
+Run the test.
