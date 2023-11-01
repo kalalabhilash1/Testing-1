@@ -1,0 +1,8 @@
+The Interleave Controller in JMeter is a controller that allows you to execute multiple samplers in an interleaved fashion. 
+This means that the controller will execute each sampler once,
+then it will start over and execute each sampler again, and so on.
+
+To use the Interleave Controller,
+simply add it to your JMeter Test Plan and then add the samplers that you want to interleave under the Interleave Controller node.
+You can also add other controllers under the Interleave Controller node, 
+such as Loop Controllers and Random Controllers.
