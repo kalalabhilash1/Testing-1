@@ -1,0 +1,11 @@
+To run a collection remotely with URL in Postman, you can follow these steps:
+
+Create a collection in Postman. This collection will contain the requests that you want to run remotely.
+Generate a public link for the collection. To do this, click the Share button next to the collection name and select Get public link.
+Copy the collection link.
+Run the collection on a remote machine. To do this, you can use Newman, the Postman command-line runner. Open a terminal window on the remote machine and navigate to the directory where Newman is installed.
+Run the following command:
+newman run <collection_link>
+Replace <collection_link> with the public link for the collection that you generated in step 3.
+
+Newman will run the collection on the remote machine and send the results back to your local machine. You can view the results in the Newman console.
