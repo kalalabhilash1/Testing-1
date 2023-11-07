@@ -1,0 +1,7 @@
+To run SOAP requests in Postman, follow these steps:
+
+Create a new request.
+Set the request method to POST.
+Set the Content-Type header to text/xml.
+In the request body, enter your SOAP request.
+Click the Send button.
