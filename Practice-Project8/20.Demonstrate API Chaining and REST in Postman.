@@ -1,0 +1,26 @@
+API chaining is the process of making multiple API calls in a sequence, where the output of one call is used as the input to the next call. This can be useful for automating complex workflows or performing data transformations.
+
+REST (Representational State Transfer) is an architectural style for designing APIs. REST APIs use HTTP verbs (GET, POST, PUT, DELETE) to perform CRUD (Create, Read, Update, Delete) operations on resources.
+
+To perform API chaining in Postman, you can use the Pre-request Script tab to write a JavaScript function that will generate the request for the next call in the sequence. The function can use the output of the previous call as input.
+API chaining is a powerful technique that can be used to automate complex workflows and perform data transformations. By using Postman's Collection Runner and Pre-request Script and Test Script tabs, you can easily create and execute API chains.
+
+REST
+
+REST APIs are designed to be stateless, meaning that each request should be independent of any previous requests. This makes REST APIs very scalable and easy to cache.
+
+REST APIs also use a uniform interface, which means that the same HTTP verbs and headers are used for all operations. This makes REST APIs easy to learn and use.
+
+Some examples of popular REST APIs include the Twitter API, the GitHub API, and the Google Maps API.
+
+Benefits of using REST APIs
+
+There are many benefits to using REST APIs, including:
+
+Scalability: REST APIs are designed to be very scalable, meaning that they can handle a large number of requests without any problems.
+Cachability: REST APIs are stateless, which means that responses can be cached by clients. This can improve performance and reduce bandwidth usage.
+Ease of use: REST APIs use a uniform interface, which makes them easy to learn and use.
+Maturity: REST APIs are a mature technology with a large community of users and developers.
+Conclusion
+
+API chaining and REST are powerful techniques that can be used to automate complex workflows and perform data transformations. Postman is a great tool for creating and executing API chains and interacting with REST APIs.
