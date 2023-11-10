@@ -1,0 +1,48 @@
+1. Add Log4j Dependency: Open your project's `pom.xml` file and add the Log4j dependency. Here's an example of how it should look:
+
+xml
+<dependencies>
+    ...
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.17.0</version>
+    </dependency>
+    ...
+</dependencies>
+
+
+2. Create Log4j Configuration File: Create a new file named `log4j2.xml` in the `src/main/resources` directory of your project. This file will contain the Log4j configuration. Here's a basic example:
+
+xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
+
+
+This configuration will log messages to the console with a timestamp, log level, logger name, and the message itself.
+
+3. Use Log4j in Your Code: In your Java classes, you can use Log4j to log messages. Here's an example:
+
+java
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class MyClass {
+    private static final Logger logger = LogManager.getLogger(MyClass.class);
+
+    public static void main(String[] args) {
+        logger.info("This is an info message");
+        logger.error("This is an error message");
+    }
+}
