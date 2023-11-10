@@ -1,0 +1,42 @@
+SETUP OR CONFIGURE REST ASSURED
+
+1. First, make sure you have a Java development environment set up on your machine.
+
+2. Create a new Maven or Gradle project, or use an existing one.
+
+3. Open your project's build file (pom.xml for Maven or build.gradle for Gradle).
+
+4. Add the REST Assured dependency to your project. For Maven, add the following dependency to the `<dependencies>` section:
+
+xml
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>4.4.0</version>
+    <scope>test</scope>
+</dependency>
+
+
+For Gradle, add the following dependency to the `dependencies` block:
+
+groovy
+testImplementation 'io.rest-assured:rest-assured:4.4.0'
+
+
+5. Save the build file and let your build tool resolve the dependencies.
+
+6. Now, you're ready to start writing your REST Assured tests! Create a new Java class or update an existing one.
+
+7. Import the necessary REST Assured classes at the top of your Java file:
+
+java
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+
+8. You can now use REST Assured's fluent API to write your tests. For example, you can send HTTP requests, validate responses, and extract data from the response.
+
+9. Run your tests and verify that they are working as expected.
+
+That's it! You have successfully set up and configured REST Assured in your project. Happy testing! Let me know if you have any further questions or need more assistance.
