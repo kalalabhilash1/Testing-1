@@ -1,0 +1,124 @@
+Program1:
+
+package restassureScripts;
+
+import org.hamcrest.Matchers;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+
+public class Script005PayloadXML {
+	
+	@Test
+	public void payloadXML()
+	{
+		
+		String xmlrequestBody = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n"
+				+ "<Pet>\r\n"
+				+ "	<id>0</id>\r\n"
+				+ "	<Category>\r\n"
+				+ "		<id>0</id>\r\n"
+				+ "		<name>string</name>\r\n"
+				+ "	</Category>\r\n"
+				+ "	<name>doggie</name>\r\n"
+				+ "	<photoUrls>\r\n"
+				+ "		<photoUrl>string</photoUrl>\r\n"
+				+ "	</photoUrls>\r\n"
+				+ "	<tags>\r\n"
+				+ "		<Tag>\r\n"
+				+ "			<id>0</id>\r\n"
+				+ "			<name>string</name>\r\n"
+				+ "		</Tag>\r\n"
+				+ "	</tags>\r\n"
+				+ "	<status>available</status>\r\n"
+				+ "</Pet>";
+		
+		RestAssured.given()
+		.baseUri("https://petstore.swagger.io")
+		.basePath("/v2/pet")
+		.contentType(ContentType.XML)
+		.accept("application/xml")
+		.body(xmlrequestBody)
+		.when().post()  // execute post request
+		.then()
+		.statusCode(200)
+		.body("Pet.name", Matchers.equalTo("doggie"))
+		.log().all();
+		
+	}
+
+}
+
+Program2:
+
+package restassureScripts;
+
+import org.json.JSONObject;
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import static org.hamcrest.Matchers.equalTo;
+
+public class Script004PayloadJSON {
+	
+	
+	// Send the body with the post request with content type as JSON
+	
+	// Sending JSON data directly from test method
+	
+	@Test
+	public void postusingJSON()
+	{
+		
+		JSONObject body = new JSONObject();
+		body.put("name", "meghna");
+		body.put("salary", "4567");
+		body.put("age", "30");
+		
+	int responseid =	RestAssured.given()
+		.baseUri("https://dummy.restapiexample.com/api/v1")
+		.contentType(ContentType.JSON)
+		.body(body.toString())
+		.when().post("/create")
+		.then()
+		.statusCode(200)
+		.body("data.name", equalTo("meghna")) // validate the name created is megha or not
+		.extract().path("data.id");
+	
+	System.out.println(responseid);
+		
+		
+		
+	}
+
+}
+
+program3:
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+public class RestAssuredLoggingExample {
+
+    public static void main(String[] args) {
+        // Specify the base URI
+        RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+
+        // Perform a GET request and log the request and response details
+        Response response = RestAssured.given()
+                .log().all() // Log the request details
+                .when()
+                .get("/posts/1")
+                .then()
+                .log().all() // Log the response details
+                .contentType(ContentType.JSON)
+                .extract().response();
+
+        // Print the response body
+        System.out.println("Response Body:");
+        System.out.println(response.getBody().asString());
+    }
+}
