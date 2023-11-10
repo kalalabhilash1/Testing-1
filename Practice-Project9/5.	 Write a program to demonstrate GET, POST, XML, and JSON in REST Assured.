@@ -1,0 +1,39 @@
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+public class RestAssuredDemo {
+
+    public static void main(String[] args) {
+        // Specify the base URI
+        RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+
+        // Perform a GET request
+        Response getResponse = RestAssured.get("/posts/1");
+        System.out.println("GET Response:");
+        System.out.println(getResponse.getBody().asString());
+
+        // Perform a POST request with JSON payload
+        String requestBody = "{\"title\":\"REST Assured Demo\",\"body\":\"Hello, this is a demo.\",\"userId\":1}";
+        Response postResponse = RestAssured.given()
+                .contentType(ContentType.JSON)
+                .body(requestBody)
+                .post("/posts");
+        System.out.println("\nPOST Response:");
+        System.out.println(postResponse.getBody().asString());
+
+        // Perform a GET request with XML response
+        Response xmlResponse = RestAssured.given()
+                .accept(ContentType.XML)
+                .get("/posts/1");
+        System.out.println("\nGET XML Response:");
+        System.out.println(xmlResponse.getBody().asString());
+
+        // Perform a GET request with JSON response
+        Response jsonResponse = RestAssured.given()
+                .accept(ContentType.JSON)
+                .get("/posts/1");
+        System.out.println("\nGET JSON Response:");
+        System.out.println(jsonResponse.getBody().asString());
+    }
+}
